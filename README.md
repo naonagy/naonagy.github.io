@@ -1,2 +1,0 @@
-# naonagy.github.io
-Portofoliu
