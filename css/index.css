@@ -11,9 +11,15 @@
  * Base structure
  */
 
+
+
+ 
 body {
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5) !important;
+  background: #606c88;
+background: -webkit-radial-gradient(circle, #606c88 0%, #3f4c6b 100%);
+background: radial-gradient(circle, #606c88 0%, #3f4c6b 100%);
 }
 
 .cover-container {
@@ -93,4 +99,75 @@ body {
   text-align: center;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
+}
+
+
+.glitch-wrapper {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+
+.glitch {
+   position: relative;
+   font-size: 80px;
+   font-weight: 700;
+   line-height: 1.2;
+   color: #fff;
+   letter-spacing: 5px;
+   z-index: 1;
+}
+
+.glitch:before,
+.glitch:after {
+   display: block;
+   content: attr(data-glitch);
+   position: absolute;
+   top: 0;
+   left: 0;
+   opacity: 0.8;
+}
+
+.glitch:before {
+   animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+   color: #00ffff;
+   z-index: -1;
+}
+
+.glitch:after {
+   animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+   color: #f0f;
+   z-index: -2;
+}
+
+@keyframes glitch-color {
+   0% {
+      transform: translate(0);
+   }
+
+   20% {
+      transform: translate(-3px, 3px);
+   }
+
+   40% {
+      transform: translate(-3px, -3px);
+   }
+
+   60% {
+      transform: translate(3px, 3px);
+   }
+
+   80% {
+      transform: translate(3px, -3px);
+   }
+
+   to {
+      transform: translate(0);
+   }
+}
+.profile-image{
+  -webkit-box-shadow: 3px 3px 16px 3.5px #585151;
+-moz-box-shadow: 3px 3px 16px 3.5px #585151;
+box-shadow: 3px 3px 16px 3.5px #585151;
 }
